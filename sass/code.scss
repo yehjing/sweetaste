@@ -1,0 +1,300 @@
+// 共同設定
+@charset "utf-8";
+@import "normalize";
+@import "Compass";
+@import "breakpoint";
+
+$white-color: #fff;
+$black-color: #000;
+$dark-color: #252525;
+$gray-color: #eee;
+
+$main-color: #3F5D45;
+$light-green-color: #8DA291;
+$lighten-green-color: #EAF0ED;
+
+$yellow-color: #FFE180;
+
+
+$iPadDisplay: 768px 1024px;
+
+%displayNone {
+	display: none;
+}
+%list-reset {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+%before-after {
+	content: '';
+	display: block;
+}
+%before-after-clear {
+	@extend %before-after;
+	clear: both;
+}
+%inline-align {
+	display: inline-block;
+	vertical-align: middle;
+}
+%inline-align-min-970 {
+	@include breakpoint(970px) {
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+%flex {
+	display: flex;
+}
+%flex-970 {
+	@include breakpoint(970px) {
+		display: flex;
+	}
+}
+%flex-center {
+	@extend %flex;
+	align-content: center;
+}
+%flex-center-970 {
+	@extend %flex-970;
+	@include breakpoint(970px) {
+		align-content: center;
+	}
+}
+%flex-center-between {
+	@extend %flex-center;
+	justify-content: space-between;
+}
+%flex-center-between-970 {
+	@extend %flex-center-970;
+	@include breakpoint(970px) {
+		justify-content: space-between;
+	}
+}
+%flex-wrap {
+	@extend %flex;
+	flex-wrap: wrap;
+}
+%flex-wrap-970 {
+	@extend %flex-970;
+	@include breakpoint(970px) {
+		flex-wrap: wrap;
+	}
+}
+%absolute-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	@include translate(-50%, -50%);
+}
+%absolute-center-970px {
+	@include breakpoint(970px) {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		@include translate(-50%, -50%);
+	}
+}
+%absolute-center-969px {
+	@include breakpoint(max-width 969px) {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		@include translate(-50%, -50%);
+	}
+}
+%img-center {
+	img {
+		@extend %absolute-center;
+	}
+	&.landscape {
+		img {
+			height: 100%;
+		}
+	}
+	&.portrait {
+		img {
+			width: 100%;
+		}
+	}
+}
+%submit {
+	width: 100%;
+	margin: 0;
+	padding: 20px;
+	color: $main-color;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 1;
+	text-align: center;
+	background-color: $yellow-color;
+	border: 0;
+	@include transition(all 0.3s);
+	&:hover {
+		background-color: $lighten-green-color;
+	}
+}
+%btn {
+	text-align: center;
+	transition: all .5s;
+}
+@mixin btn($color, $default, $colorHover, $hover, $height, $paddingLeft, $paddingRight) {
+	@extend %btn;
+	padding-left: $paddingLeft;
+	padding-right: $paddingRight;
+	height: $height;
+	color: $color;
+	line-height: $height;
+	background-color: $default;
+	&:hover {
+		@include breakpoint(1024px) {
+			color: $colorHover;
+			background-color: $hover;
+		};
+	}
+}
+@mixin textBtn($color, $hover) {
+	color: $color;
+	&:hover {
+		color: $hover;
+	}
+}
+@mixin radialGradient($color1, $position1, $color2, $position2) {
+	background-color: $color1;
+	@include filter-gradient($color1, $color2, horizontal);
+	@include background-image(radial-gradient(center, ellipse cover, $color1 $position1, $color2 $position2));
+}
+html {
+	min-height: 100%;
+	height: 100%;
+}
+body {
+	font-family: Roboto, "source-han-sans-traditional", sans-serif;
+	font-weight: 300;
+	@include breakpoint(768px){
+		min-height: 100%;
+		height: 100%;
+	}
+}
+@include breakpoint(max-width 375px) {
+	@viewport {
+		width: 414px;
+	}
+}
+@include breakpoint($iPadDisplay) {
+	@media (orientation: portrait) {
+		@viewport {
+			width: 1024px;
+		}
+	}
+	@media (orientation: landscape) {
+		@viewport {
+			width: 768px;
+		}
+	}
+}
+.serif {
+	font-family: "adobe-garamond-pro", "source-han-serif-tc", serif;
+}
+.sr-only {
+	position: absolute!important;
+	padding: 0!important;
+	margin: 0!important;
+	width: 0!important;
+	height: 0!important;
+	font-size: 0!important;
+}
+@font-face {
+	font-family: 'icomoon';
+	src: url('../fonts/icomoon.eot?rcdzqv');
+	src: url('../fonts/icomoon.eot?rcdzqv#iefix') format('embedded-opentype'),
+		 url('../fonts/icomoon.ttf?rcdzqv') format('truetype'),
+		 url('../fonts/icomoon.woff?rcdzqv') format('woff'),
+		 url('../fonts/icomoon.svg?rcdzqv#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.icon-checked:before {
+	content: "\e911";
+}
+.icon-credit-card:before {
+	content: "\e910";
+}
+.icon-select:before {
+	content: "\e90e";
+}
+.icon-selected:before {
+	content: "\e90f";
+}
+.icon-facebook-logo:before {
+	content: "\e90b";
+}
+.icon-google-logo:before {
+	content: "\e90c";
+}
+.icon-yahoo-logo:before {
+	content: "\e90d";
+}
+.icon-add:before {
+	content: "\e145";
+}
+.icon-remove:before {
+	content: "\e15b";
+}
+.icon-arrow:before {
+	content: "\e907";
+}
+.icon-person:before {
+	content: "\e909";
+}
+.icon-key:before {
+	content: "\e90a";
+}
+.icon-delete:before {
+	content: "\e908";
+}
+.icon-at-sign:before {
+	content: "\e902";
+}
+.icon-heart-outlined:before {
+	content: "\e905";
+}
+.icon-heart:before {
+	content: "\e906";
+}
+.icon-arrow-thin-right:before {
+	content: "\e903";
+}
+.icon-envelope:before {
+	content: "\e904";
+}
+.icon-facebook:before {
+	content: "\e900";
+}
+.icon-cart:before {
+	content: "\e901";
+}
+* {
+	@include box-sizing(border-box);
+}
+a {
+	text-decoration: none;
+	@include breakpoint(1024px) {
+		transition: .5s;
+	};
+}
+img {
+	display: block;
+}

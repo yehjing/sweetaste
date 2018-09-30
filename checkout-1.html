@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<title>結帳｜Sweetaste*</title>
+		<meta name="keywords" content="Sweetaste,甜點,馬卡龍,甜派,波士頓">
+		<meta name="description" content="今天是個————吃甜點的好日子。">
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+		<meta property="og:title" content="Sweetaste*">
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://topic.cw.com.tw/Sweetaste*/" />
+		<meta property="og:image" content="https://topic.cw.com.tw/Sweetaste*/img/fbshare.jpg" />
+		<meta property="og:site_name" content="Sweetaste*" />
+		<meta property="og:locale" content="zh_TW" />
+		<meta property="og:description" content="今天是個————吃甜點的好日子。">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<nav>
+			<div class="container">
+				<div class="ham"><span></span><span></span><span></span></div>
+				<a href="index.html" class="logo">
+					<img src="img/logo-dark.svg" class="icon" alt="Sweetaste*">
+					<img src="img/logotype.svg" class="type" alt="Sweetaste*">
+				</a>
+				<div class="menu-cart">
+					<ul class="menu">
+						<li>
+							<a href="index.html">首頁</a>
+						</li><li>
+							<a href="product.html">甜點</a>
+						</li><li>
+							<a href="login.html">登入</a>
+						</li>
+					</ul>
+					<ul class="cart">
+						<li>
+							<a href="cart.html"><i class="icon-cart"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<section class="checkout">
+			<div class="container">
+				<div class="form-block">
+					<div class="cart-title">
+						<div class="h2">運送</div>
+						<ol class="step">
+							<li><i class="icon-selected"></i>
+							</li><li><i class="icon-select"></i>
+							</li><li><i class="icon-select"></i>
+							</li>
+						</ol>
+					</div>
+					<form class="active" action="checkout-2.html">
+						<div class="col-2">
+							<span>姓氏</span>
+							<label>
+								<input type="text" placeholder="王">
+							</label>
+						</div><div class="col-2">
+							<span>名字</span>
+							<label>
+								<input type="text" placeholder="小明">
+							</label>
+						</div><div>
+							<span>電話</span>
+							<label>
+								<input type="text" placeholder="0912-345-678">
+							</label>
+						</div><div>
+							<span>地址</span>
+							<label class="addr-selector-win">
+								<dt class="group">
+									<div class="select col-2">
+										<select class="county"></select>
+									</div><div class="select col-2">
+										<select class="district"></select>
+									</div>
+								</dt>
+								<input name="zipcode" type="text" class="zipcode" placeholder="幸福路 520 號">
+							</label>
+						</div>
+						<input type="submit" value="結帳">
+					</form>
+				</div>
+				<div class="order-block cart-abstract">
+					<div class="order">
+						<div class="cart-title h2">訂單摘要</div>
+						<form action="checkout-1.html" class="summary">
+							<ul>
+								<li>
+									<div class="name">小計</div>
+									<div class="product-prize">NT$ <span>2,700</span></div>
+								</li>
+								<li>
+									<div class="name">運費</div>
+									<div class="ship">NT$ 300</div>
+								</li>
+								<li class="sum">
+									<div class="name">總計</div>
+									<div class="sum-prize">NT$ <span>3,000</span></div>
+								</li>
+							</ul>
+						</form>
+					</div>
+					<div class="order">
+						<div class="cart-title h2">購物清單</div>
+						<ul class="cart-edit">
+							<li>
+								<div class="img"><img src="img/product-8@2x.jpg" alt="焦糖馬卡龍"></div>
+								<div class="detail">
+									<div class="name">焦糖馬卡龍（2）</div>
+									<div class="accumulate">NT$ <span>900</span></div>
+								</div>
+							</li>
+							<li>
+								<div class="img"><img src="img/product-2@2x.jpg" alt="焦糖馬卡龍"></div>
+								<div class="detail">
+									<div class="name">焦糖馬卡龍（2）</div>
+									<div class="accumulate">NT$ <span>900</span></div>
+								</div>
+							</li>
+							<li>
+								<div class="img"><img src="img/product-5@2x.jpg" alt="焦糖馬卡龍"></div>
+								<div class="detail">
+									<div class="name">焦糖馬卡龍（2）</div>
+									<div class="accumulate">NT$ <span>900</span></div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="subscribe">
+				<div class="container">
+					<div class="logo-says">
+						<img src="img/logo-light.svg" alt="Sweetaste*" class="logo white">
+						<span>訂閱你我的甜蜜郵件</span>
+					</div>
+					<form action="index.html">
+						<i class="icon-envelope"></i><input type="email"><button><i class="icon-arrow-thin-right"></i><span class="sr-only">確認送出</span></button>
+					</form>
+				</div>
+			</div>
+			<div class="data">
+				<div class="container">
+					<div class="logotype-contact">
+						<div class="logotype dark">
+							<img src="img/logotype.svg" alt="Sweetaste*">
+						</div>
+						<div class="contact">
+							<a href="tel:0712345678">07-1234-5678</a>
+							<a href="mailto:sweetaste@email.com">sweetaste@email.com</a>
+							<address>
+								<a href="https://www.google.com.tw/maps/search/高雄市新興區幸福路520號" target="_blank">800 高雄市新興區幸福路 520 號</a>
+							</address>
+						</div>
+					</div>
+					<div class="slogan">
+						<div class="h6 serif">
+							<span>今天是個<i>──</i></span><span>吃甜點的好日子<sup>。</sup></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="copyright">
+				<div class="container">
+					<ul class="sns">
+						<li><a href="#!"><i class="icon-at-sign"></i></a></li>
+						<li><a href="#!"><i class="icon-facebook"></i></a></li>
+					</ul>
+					<div class="rights serif">
+						© 2018 Sweetaste* All Rights Reserved
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="https://use.typekit.net/eqt0czu.js"></script>
+		<script src="js/tw-city-selector.min.js"></script>
+		<script src="js/style.js"></script>
+		<script>try{Typekit.load({ async: true });}catch(e){}</script>
+	</body>
+</html>
